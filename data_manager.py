@@ -7,6 +7,7 @@ from glob import glob
 import cv2
 import torch
 from torch.utils.data import Dataset
+import config as cfg
 
 
 class ClassficationDataset(Dataset):
@@ -46,7 +47,7 @@ class ClassficationDataset(Dataset):
             image: 指定資料集序號中的圖片檔 (torch.Tensor)
             y_label: 指定資料集序號中的圖片檔的分類編號 (torch.Tensor)
         """
-        image = cv2.imread(self.image_list[index])
+        image = cv2.resize(cv2.imread(self.image_list[index]), cfg.input_shape[-2:])
         y_label = self.image_list[index].split('/')[-2]
         y_label_index = self.y_label_list.index(y_label)
         return torch.FloatTensor(image), torch.tensor([y_label_index], dtype=torch.int64)
