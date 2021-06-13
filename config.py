@@ -26,7 +26,11 @@ show_interval = 10
 
 save_interval = 2000
 
-input_shape = (-1, 3, 28, 28)
+width = 28
+
+height = 28
+
+input_shape = (-1, 3, width, height)
 
 save_model_path = 'model_weights'
 
