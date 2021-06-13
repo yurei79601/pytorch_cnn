@@ -47,8 +47,9 @@ class ClassficationDataset(Dataset):
             y_label: 指定資料集序號中的圖片檔的分類編號 (torch.Tensor)
         """
         image = cv2.imread(self.image_list[index])
-        y_label = int(self.image_list[index].split('/')[-2])
-        return torch.FloatTensor(image), torch.tensor([y_label], dtype=torch.int64)
+        y_label = self.image_list[index].split('/')[-2]
+        y_label_index = self.y_label_list.index(y_label)
+        return torch.FloatTensor(image), torch.tensor([y_label_index], dtype=torch.int64)
 
 
 def mnist_collate(batch: int):
