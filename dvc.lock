@@ -1,0 +1,23 @@
+schema: '2.0'
+stages:
+  MNIST_CNN:
+    cmd: python generate_mnist_to_images.py
+    deps:
+    - path: config.py
+      md5: 2e66e599198582f8b1d5741c25989b3f
+      size: 605
+    - path: generate_mnist_to_images.py
+      md5: 4c69207c3a80d9413d333e024ab1967c
+      size: 3538
+    - path: source_array/
+      md5: 1eb3ff182be67b279136a3c0fa296581.dir
+      size: 54950512
+      nfiles: 4
+    - path: utils.py
+      md5: 36bd1cb3da13d169baf97591eeafa57c
+      size: 201
+    outs:
+    - path: MNIST_data/
+      md5: d751713988987e9331980363e24189ce.dir
+      size: 0
+      nfiles: 0

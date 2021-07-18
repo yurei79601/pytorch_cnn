@@ -1,0 +1,10 @@
+stages:
+  MNIST_CNN:
+    cmd: python generate_mnist_to_images.py
+    deps:
+    - config.py
+    - generate_mnist_to_images.py
+    - source_array/
+    - utils.py
+    outs:
+    - MNIST_data/
