@@ -83,7 +83,7 @@ if __name__ == "__main__":
 
     for task in task_list:
         for file_type in file_type_list:
-            check_path_exist(os.path.join(data_path, task, file_type))
+            check_path_exists(os.path.join(data_path, task, file_type))
 
     (
         features_train,
